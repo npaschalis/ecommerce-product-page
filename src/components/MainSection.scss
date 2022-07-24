@@ -1,0 +1,224 @@
+@import "../variables.scss";
+
+.main-section {
+  
+  .main-section-container {
+    height: calc(100vh - 4rem);
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 4em;
+
+    @media screen and (max-width: 600px) {
+      width: 100%;
+      flex-direction: column;
+      gap: 1em;
+    }
+
+    .main-left {
+        flex: 1;
+        position: relative;
+    
+        .main-pic {
+          width: 100%;
+          border-radius: 0.75rem;
+
+          @media screen and (max-width: 600px) {
+            border-radius: 0;
+          }
+
+          @media screen and (min-width: 601px) {
+            cursor: pointer;
+          }
+        }
+
+        .slide {
+          position: absolute;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          top: 50%;
+          transform: translateY(-50%);
+          cursor: pointer;
+          border-radius: 50%;
+          height: 2rem;
+          width: 2rem;
+          background-color: white;
+
+
+          @media screen and (min-width: 601px) {
+              display: none;
+          }
+
+          &.prev {
+            left: 1rem;
+          }
+
+          &.next {
+            right: 1rem;
+          }
+        }
+
+        @media screen and (max-width: 600px) {
+          margin-left: -5vw;
+          margin-right: -5vw;
+        }
+
+        .pictures-set {
+          margin-top: 1rem;
+          display: flex;
+          gap: 1rem;
+
+          .picture-set-item {
+            img {
+              width: 100%;
+              cursor: pointer;
+            }
+
+            &.active {
+              img {
+                outline: 2px solid $mainColor;
+                opacity: 0.2;
+              }
+            }
+          }
+
+
+          @media screen and (max-width: 600px) {
+            display: none;
+          }
+        }
+    }
+    
+    .main-right {
+      flex: 1;
+
+      h5 {
+          margin-top: 0;
+          margin-bottom: 0.5rem;
+          text-transform: uppercase;
+          color: $mainColor;
+          letter-spacing: 0.1em;
+
+          @media screen and (max-width: 600px) {
+            font-size: 0.875em;
+          }
+        }
+      
+      h2 {
+        margin-top: 0;
+        font-size: 3em;
+        line-height: 1em;
+
+        @media screen and (max-width: 600px) {
+          margin-bottom: 0;
+          font-size: 1.5em;
+          line-height: 1.5rem;
+        }
+      }
+
+      p {
+        color: $mainGray;
+
+        @media screen and (max-width: 600px) {
+          font-size: 0.875em;
+          line-height: 1.5em;
+        }
+
+        @media screen and (max-height: 739px) {
+          display: none;
+        }
+      }
+
+      .price-div {
+        display: flex;
+        flex-direction: column;
+        gap: 0.875rem;
+
+        .price-div-top {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+
+          .price {
+            font-size: 1.3em;
+            font-weight: 700;
+          }
+          .discount {
+            padding: 0.2rem 0.5rem;
+            border-radius: 5px;
+            font-size: 0.875em;
+            font-weight: 600;
+            color: $mainColor;
+            background-color: $secondaryColor;
+          }
+        }
+
+        .price-div-bottom {
+          .price-without-discount {
+            color: $mainGray;
+            text-decoration: line-through;
+          }
+        }
+
+        @media screen and (max-width: 600px) {
+          flex-direction: row;
+          justify-content: space-between;
+        }
+
+        @media screen and (max-height: 750px) {
+          margin-top: 0.875rem;
+        }
+      }
+
+      .buttons {
+        margin-top: 2rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5em;
+
+        .counter {
+          flex: 1;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0.6rem 1.4rem;
+          border-radius: 0.5rem;
+          background-color: $secondaryGray;
+
+          i {
+            color: $mainColor;
+            cursor: pointer;
+          }
+
+          span {
+            font-size: 0.875em;
+            font-weight: 700;
+          }
+        }
+
+        .add-to-cart {
+          flex: 3;
+
+          button {
+            width: 100%;
+            background-color: $mainColor;
+            color: white;
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+
+            i {
+              color: white;
+              margin-right: 0.5rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+

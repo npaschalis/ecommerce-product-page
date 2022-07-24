@@ -1,0 +1,61 @@
+@import "../variables.scss";
+
+.navigation {
+  height: 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .big-screen-menu {
+      display: flex;
+      gap: 2em;
+
+      @media screen and (max-width: 799px) {
+        display: none;
+      }
+  }
+
+  .navigation-left {
+      display: flex;
+      align-items: baseline;
+      gap: 1.5em;
+
+    .hamburger {
+      cursor: pointer;
+
+      @media screen and (min-width: 800px) {
+        display: none;
+      }
+    }
+  }
+
+  .navigation-right {
+    display: flex;
+    align-items: baseline;
+    gap: 1.2em;
+
+    .cart-navbar {
+      position: relative;
+
+      .cart-icon {
+        cursor: pointer;
+      }
+
+      span {
+        position: absolute;
+        color: white;
+        background-color: $mainColor;
+        font-size: 0.675em;
+        padding: 0.1rem 0.45rem;
+        border-radius: 1rem;
+        left: 1em;
+        top: -0.75em;
+        cursor: pointer;
+      }
+    }
+
+    .avatar-icon {
+        height: 1.75em;
+    }
+  }
+}

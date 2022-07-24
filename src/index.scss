@@ -1,0 +1,30 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Kumbh Sans', sans-serif;
+}
+
+a {
+  text-decoration: none;
+
+  &:visited {
+    color: black;
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+.App {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+}
+
+
+/* COLORS */
